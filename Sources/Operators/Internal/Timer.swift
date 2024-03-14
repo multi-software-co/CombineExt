@@ -161,10 +161,10 @@
           lock.cleanupLock()
         }
 
-        func addSubscriber<S: Subscriber>(_ sub: S)
+        func addSubscriber<T: Subscriber>(_ sub: T)
         where
-          S.Failure == Failure,
-          S.Input == Output
+          T.Failure == Failure,
+          T.Input == Output
         {
           lock.lock()
           subscribers.append(AnySubscriber(sub))
