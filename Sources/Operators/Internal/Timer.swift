@@ -229,8 +229,8 @@
         }
       }
 
-      internal func receive<S: Subscriber>(subscriber: S)
-      where Failure == S.Failure, Output == S.Input {
+      internal func receive<T: Subscriber>(subscriber: T)
+      where Failure == T.Failure, Output == T.Input {
         routingSubscription.addSubscriber(subscriber)
       }
 
